@@ -1,2 +1,1 @@
-# machine-learning-lecture
-Machine learning in Unity
+# Machine learning in Unity
