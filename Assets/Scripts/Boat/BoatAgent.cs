@@ -39,6 +39,7 @@ public class BoatAgent : Agent
     public override void OnEpisodeBegin()
     {
         rb.transform.localPosition = startPosition;
+        rb.velocity = Vector3.zero;
     }
 
     public override void OnActionReceived(ActionBuffers actions)
