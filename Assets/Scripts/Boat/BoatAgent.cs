@@ -36,12 +36,13 @@ public class BoatAgent : Agent
     [SerializeField]
     Vector3 rotatePosition = new Vector3(0.0f, 180.0f, 0.0f);
 
+    // This method is for putting the rigidbody in the initial position when the episode begins.
     public override void OnEpisodeBegin()
     {
         rb.transform.localPosition = startPosition;
         rb.velocity = Vector3.zero;
     }
-
+    // This method is for controlling the rigidbody in the episode
     public override void OnActionReceived(ActionBuffers actions)
     {
         int moveZ = actions.DiscreteActions[0];
@@ -71,12 +72,13 @@ public class BoatAgent : Agent
             }
         }
     }
-
+    // Collect the observations for the agent and the target (terrain in this case)
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(targetTransform.localPosition);
     }
+    // This method gets the inputs from the user in the Heuristic mode and translates it to the discrete actions array.
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
@@ -93,11 +95,13 @@ public class BoatAgent : Agent
             case +1: discreteActions[1] = 2; break;
         }
     }
+    // This method is for rewarding the player and ending the episode.
     public void RewardUpdate(float reward)
     {
         AddReward(reward);
         EndEpisode();
     }
+    // This method is for moving the boat in the direction relative to the rotation.
     private void MoveInDirection()
     {
         Vector3 rot = rb.transform.rotation.eulerAngles;
@@ -107,13 +111,16 @@ public class BoatAgent : Agent
         movement.y = rb.velocity.y;
         rb.velocity = movement;
     }
+    // This method is for updating the velocity of the boat.
     private void UpdateVelocity()
     {
         rb.velocity = new Vector3(steerForce, rb.velocity.y, rb.velocity.z);
     }
     private void Update()
     {
+        // Get the wave height based on the current x value.
         float waveHeight = WaveManager.instance.GetWaveHeight(_x: boatTop.transform.position.x);
+        // If the top of the boat is under the wave height then we lost.
         if (waveHeight > boatTop.transform.position.y)
         {
             rb.transform.eulerAngles = rotatePosition * Time.deltaTime;
