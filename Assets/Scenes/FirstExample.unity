@@ -297,7 +297,7 @@ PrefabInstance:
     - target: {fileID: 2957471447232225164, guid: e505ad6aa92b701429ccea3dac7fece1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80.71
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2957471447232225164, guid: e505ad6aa92b701429ccea3dac7fece1,
         type: 3}
@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 2957471447232225164, guid: e505ad6aa92b701429ccea3dac7fece1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2957471447232225164, guid: e505ad6aa92b701429ccea3dac7fece1,
         type: 3}
@@ -462,13 +462,13 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 10000
   thrustForce: 4
-  torqueForce: 3
+  steerForce: 10
   leftFloater: {fileID: 204420169}
   rightFloater: {fileID: 1657816918}
   boatTop: {fileID: 1942005648}
   rb: {fileID: 597289820}
   targetTransform: {fileID: 1937586378}
-  startPosition: {x: 80, y: -0.5, z: 10}
+  startPosition: {x: 60, y: -0.5, z: 0}
   rotatePosition: {x: 0, y: 180, z: 0}
 --- !u!114 &1091595680
 MonoBehaviour:
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amplitude: 0.5
-  length: 1
+  length: 2
   speed: 1
   offset: 2
 --- !u!114 &1485606504
@@ -785,7 +785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551305601}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 70.31593, y: 3.2088032, z: 9.842059}
+  m_LocalPosition: {x: 48.819645, y: 3.7917492, z: -0.18205261}
   m_LocalScale: {x: 0.600001, y: 1, z: 1.6666712}
   m_ConstrainProportionsScale: 0
   m_Children: []
