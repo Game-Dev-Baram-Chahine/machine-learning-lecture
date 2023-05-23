@@ -1,7 +1,9 @@
 # Machine learning in Unity
 This repository represents a project in unity ML-Agents lecture at the game development course, in this project we have a boat movement game made with ml agents.
 
-## 
+## Imitation Learning
+In this project we made the boat movement with imitation learning, we used _Behavioral Cloning_ and _Gail_ for the training part with a demo file.
+For more explanations please see the [slides.pdf]()
 
 ## Credits
 The unity ML=Agents [GitHub page](https://github.com/gzrjzcx/ML-agents/)
