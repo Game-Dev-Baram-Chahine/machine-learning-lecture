@@ -12,5 +12,11 @@ public class BoatCollider : MonoBehaviour
             Debug.Log("Success");
             boatAgent.RewardUpdate(1.0f);
         }
+        else if (collision.gameObject.tag == "police")
+        {
+            BoatAgent boatAgent = GetComponentInChildren<BoatAgent>();
+            Debug.Log("You got caught");
+            boatAgent.RewardUpdate(-0.1f);
+        }
     }
 }
