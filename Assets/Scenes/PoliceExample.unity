@@ -252,7 +252,7 @@ BoxCollider:
   m_GameObject: {fileID: 54080184}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5.8010325, y: 1.9961332, z: 2.2281017}
   m_Center: {x: -0.29325867, y: 0.6107784, z: 0}
@@ -272,6 +272,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &54080189
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54080184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2301742320778191154, guid: 17fba420b298c554a9c20e1a8f31e827, type: 3}
 --- !u!1 &204420168
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +557,7 @@ BoxCollider:
   m_GameObject: {fileID: 597289818}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5.8010325, y: 1.9961332, z: 2.2281017}
   m_Center: {x: -0.29325867, y: 0.6107784, z: 0}
@@ -559,6 +573,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c513dcce14ae6506e98382f18338fcb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &597289828
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597289818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2301742320778191154, guid: 67ba160de4f0b924dbdf3247202d3670, type: 3}
 --- !u!1 &716801710
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,7 +820,7 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 10000
   thrustForce: 4
-  torqueForce: 3
+  steerForce: 3
   leftFloater: {fileID: 204420169}
   rightFloater: {fileID: 1657816918}
   boatTop: {fileID: 1942005648}
@@ -1267,7 +1295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrustForce: 10
-  torqueForce: 3
+  steerForce: 3
   leftFloater: {fileID: 858063297}
   rightFloater: {fileID: 716801711}
   noseForce:
