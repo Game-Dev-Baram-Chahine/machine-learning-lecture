@@ -21,6 +21,7 @@ public class WaterManager : MonoBehaviour
             vertices[i].y = WaveManager.instance.GetWaveHeight(transform.position.x + vertices[i].x);
         }
         meshFilter.mesh.vertices = vertices;
+        // Recalculates the normals of the Mesh from the triangles and vertices af.
         meshFilter.mesh.RecalculateNormals();
     }
 }
