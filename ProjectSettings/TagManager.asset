@@ -9,6 +9,7 @@ TagManager:
   - ground
   - symbol_O
   - wall
+  - police
   layers:
   - Default
   - TransparentFX

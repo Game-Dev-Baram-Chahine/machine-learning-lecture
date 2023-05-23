@@ -13,7 +13,7 @@ public class BoatAgent : Agent
     float thrustForce = 10f;
 
     [SerializeField]
-    float torqueForce = 10f;
+    float steerForce = 10f;
 
     [SerializeField]
     Transform leftFloater;
@@ -51,12 +51,12 @@ public class BoatAgent : Agent
         {
             if (moveZ == 2)
             {
-                rb.AddForceAtPosition(Vector3.left * torqueForce, rightFloater.transform.position, ForceMode.Acceleration);
+                rb.AddForceAtPosition(Vector3.left * steerForce, rightFloater.transform.position, ForceMode.Acceleration);
                 UpdateVelocity();
             }
             if (moveZ == 1)
             {
-                rb.AddForceAtPosition(Vector3.right * torqueForce, leftFloater.transform.position, ForceMode.Acceleration);
+                rb.AddForceAtPosition(Vector3.right * steerForce, leftFloater.transform.position, ForceMode.Acceleration);
                 UpdateVelocity();
             }
             if (moveX == 2)
@@ -109,7 +109,7 @@ public class BoatAgent : Agent
     }
     private void UpdateVelocity()
     {
-        rb.velocity = new Vector3(torqueForce, rb.velocity.y, rb.velocity.z);
+        rb.velocity = new Vector3(steerForce, rb.velocity.y, rb.velocity.z);
     }
     private void Update()
     {

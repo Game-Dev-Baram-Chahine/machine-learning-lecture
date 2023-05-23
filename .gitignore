@@ -110,4 +110,4 @@ $RECYCLE.BIN/
 # venv
 /venv
 
-/Assets/ML-Agents/Timers/SecondExample_timers.json
+/Assets/ML-Agents/Timers/*.json

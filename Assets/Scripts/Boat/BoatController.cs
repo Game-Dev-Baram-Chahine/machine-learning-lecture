@@ -9,7 +9,7 @@ public class BoatController : MonoBehaviour
     float thrustForce = 10f;
 
     [SerializeField]
-    float torqueForce = 10f;
+    float steerForce = 10f;
 
     [SerializeField]
     Transform leftFloater;
@@ -61,42 +61,45 @@ public class BoatController : MonoBehaviour
             // // Get the values of the right and left angle torque inputs.
             float rightAngle = rightAngleTorque.ReadValue<float>();
             float leftAngle = leftAngleTorque.ReadValue<float>();
-            // if (rightAngle == 1)
-            // {
-            //     rb.AddForceAtPosition(Vector3.left * torqueForce, rightFloater.transform.position, ForceMode.Acceleration);
-            //     rb.velocity = new Vector3(torqueForce, rb.velocity.y, rb.velocity.z);
-            // }
-            // if (leftAngle == 1)
-            // {
-            //     rb.AddForceAtPosition(Vector3.right * torqueForce, leftFloater.transform.position, ForceMode.Acceleration);
-            //     rb.velocity = new Vector3(torqueForce, rb.velocity.y, rb.velocity.z);
-            // }
+            if (rightAngle == 1)
+            {
+                rb.AddForceAtPosition(Vector3.left * steerForce, rightFloater.transform.position, ForceMode.Acceleration);
+                UpdateVelocity();
+            }
+            if (leftAngle == 1)
+            {
+                rb.AddForceAtPosition(Vector3.right * steerForce, leftFloater.transform.position, ForceMode.Acceleration);
+                UpdateVelocity();
+            }
             float nose = noseForce.ReadValue<float>();
             float tail = tailForce.ReadValue<float>();
             // Calculate the force applied to the boat.
             // The force is calculated by multiplying the thrust force by the nose and tail values.
             // The tail value is 1 if the player is pressing the arrow down, and 0 if he is not.
             // Apply the force to the boat.
-            // if (nose == 1)
-            // {
-            //     rb.AddRelativeForce(Vector3.forward * thrustForce, ForceMode.Acceleration);
-            //     Vector3 rot = rb.transform.rotation.eulerAngles;
-            //     rot = new Vector3(rot.x, rot.y - 90, rot.z);
-            //     Quaternion rotation = Quaternion.Euler(rot);
-            //     Vector3 movement = rotation * Vector3.forward * thrustForce;
-            //     movement.y = rb.velocity.y;
-            //     rb.velocity = movement;
-            // }
-            // if (tail == 1)
-            // {
-            //     rb.AddRelativeForce(Vector3.back * thrustForce, ForceMode.Acceleration);
-            //     Vector3 rot = rb.transform.rotation.eulerAngles;
-            //     rot = new Vector3(rot.x, rot.y - 90, rot.z);
-            //     Quaternion rotation = Quaternion.Euler(rot);
-            //     Vector3 movement = rotation * Vector3.forward * thrustForce;
-            //     movement.y = rb.velocity.y;
-            //     rb.velocity = movement;
-            // }
+            if (nose == 1)
+            {
+                rb.AddRelativeForce(Vector3.forward * thrustForce, ForceMode.Acceleration);
+                MoveInDirection();
+            }
+            if (tail == 1)
+            {
+                rb.AddRelativeForce(Vector3.back * thrustForce, ForceMode.Acceleration);
+                MoveInDirection();
+            }
         }
+    }
+    private void MoveInDirection()
+    {
+        Vector3 rot = rb.transform.rotation.eulerAngles;
+        rot = new Vector3(rot.x, rot.y - 90, rot.z);
+        Quaternion rotation = Quaternion.Euler(rot);
+        Vector3 movement = rotation * Vector3.forward * thrustForce;
+        movement.y = rb.velocity.y;
+        rb.velocity = movement;
+    }
+    private void UpdateVelocity()
+    {
+        rb.velocity = new Vector3(steerForce, rb.velocity.y, rb.velocity.z);
     }
 }
