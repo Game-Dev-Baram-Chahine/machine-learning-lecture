@@ -6,7 +6,7 @@ In this project we made the boat movement with imitation learning, we used _Beha
 For more explanations please see the [Machine Learning Lecture](https://github.com/Game-Dev-Baram-Chahine/machine-learning-lecture/blob/main/MachineLearningLecture.pdf)
 
 ## Credits
-The unity ML=Agents [GitHub page](https://github.com/gzrjzcx/ML-agents/)
+The unity MLAgents [GitHub page](https://github.com/gzrjzcx/ML-agents/)
 [YouTube tutorial about boat movement](https://www.youtube.com/watch?v=eL_zHQEju8s&t=485s&ab_channel=TomWeiland)
 [YouTube tutorial about unity imitation learning](https://youtu.be/supqT7kqpEI)
 
