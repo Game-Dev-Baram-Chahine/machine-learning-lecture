@@ -11,7 +11,7 @@ For more explanations please see the [Machine Learning Lecture](https://github.c
 
 ## Credits
 
-[The unity MLAgents GitHub page](https://github.com/gzrjzcx/ML-agents/)
+[The unity MLAgents GitHub page](https://github.com/Unity-Technologies/ml-agents)
 
 [YouTube tutorial about boat movement](https://www.youtube.com/watch?v=eL_zHQEju8s&t=485s&ab_channel=TomWeiland)
 
