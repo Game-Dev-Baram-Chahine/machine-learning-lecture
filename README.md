@@ -1,6 +1,6 @@
 # Machine learning in Unity
 
-This repository represents a project in unity ML-Agents lecture at the game development course, in this project we have a boat movement game made with ml agents.
+This repository represents a project in unity ML-Agents lecture in the game development course, in this project we have a boat movement game made with ml agents.
 
 ![Game gif](https://github.com/Game-Dev-Baram-Chahine/machine-learning-lecture/blob/main/output.gif)
 
